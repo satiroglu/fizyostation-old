@@ -51,7 +51,7 @@ class Branches(models.Model):
 
 class Sales(models.Model):
     # Sales information
-    date = models.CharField(verbose_name="Tarih", max_length=200,)
+    date = models.CharField(verbose_name="Tarih", max_length=200, help_text="Lütfen tarihi belirtiniz.")
     credit = models.CharField(verbose_name="Kartlı Satış", max_length=200,
                               help_text='Kredi/Banka kartı ile post cihazı üzerinden yapılan satışların toplan tutarı')
     cash = models.CharField(verbose_name="Nakit Satış", max_length=200,)

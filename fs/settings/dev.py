@@ -10,4 +10,4 @@ DATABASES = {
 }
 
 STATIC_ROOT = os.path.join(BASE_DIR, "files")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "files")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "files_cdn")]
