@@ -69,8 +69,8 @@ class Sales(models.Model):
 
     class Meta:
         ordering = ['-createdOn']
-        verbose_name = 'Satışlar'
-        verbose_name_plural = 'Satışlar'
+        verbose_name = 'Satışlar1'
+        verbose_name_plural = 'Satışlar1'
 
     def __unicode__(self):
         return self.date
