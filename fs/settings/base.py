@@ -26,7 +26,7 @@ SECRET_KEY = '1(d-%g&fydx#vu(t865^@@glgx1r@hsle%y4c^4-!dhfanm1dp'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['64.226.64.8', 'fs.fizyostation.com.tr', 'www.fs.fizyostation.com.tr']
 
 
 # Application definition
