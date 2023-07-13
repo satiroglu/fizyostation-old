@@ -42,7 +42,7 @@ class Branches(models.Model):
 
     class Meta:
         ordering = ['-createdOn']
-        verbose_name = 'Şube'
+        verbose_name = 'Şubeler'
         verbose_name_plural = 'Şubeler'
 
     def __str__(self):
