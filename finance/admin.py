@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sales, Branches
+from .models import Sales, Branches, Employee
 from import_export.admin import ExportActionMixin
 
 
@@ -96,3 +96,20 @@ class BranchesAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Branches, BranchesAdmin)
+
+
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ('firstName', 'lastName', 'gender', 'dateOfBirth', 'dateOfJoin', 'dateOfQuit',)
+    list_filter = ('gender',)
+    list_display_links = ['firstName', 'lastName']
+    ordering = ['id']
+    search_fields = ['firstName', 'lastName']
+    # prepopulated_fields = {'name': ('name',)}
+    # list_editable = ['status']
+    list_per_page = 25
+
+    # special actions
+    # actions = [make_branch_published, make_branch_draft]
+
+
+admin.site.register(Employee, EmployeeAdmin)
