@@ -33,8 +33,8 @@ ALLOWED_HOSTS = ['64.226.64.8', 'fs.fizyostation.com.tr', 'www.fs.fizyostation.c
 
 INSTALLED_APPS = [
     # Third party apps
-    # 'admin_interface',
-    # 'colorfield',
+    'admin_interface',
+    'colorfield',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -49,7 +49,16 @@ INSTALLED_APPS = [
 
     # Third party apps
     'import_export',
+    'cities_light',
 ]
+
+
+
+CITIES_LIGHT_TRANSLATION_LANGUAGES = ['tr']
+CITIES_LIGHT_INCLUDE_COUNTRIES = ['TR']
+CITIES_LIGHT_INCLUDE_CITY_TYPES = ['PPL', 'PPLA', 'PPLA2', 'PPLA3', 'PPLA4', 'PPLC', 'PPLF', 'PPLG', 'PPLL', 'PPLR', 'PPLS', 'STLMT',]
+
+
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 

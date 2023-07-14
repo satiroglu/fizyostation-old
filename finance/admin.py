@@ -23,6 +23,9 @@ class SalesAdmin(ExportActionMixin, admin.ModelAdmin):
     # fields = ('name', ('phone', 'email'), ('city', 'country'))
 
     fieldsets = (
+        ('Şube', {
+            'fields': ('branch',),
+        }),
         ('Günlük Satış Rakamları', {
             'fields': ('date', ('credit', 'cash', 'expense', 'remain'), ('turnover',),),
             'description': '%s' % UYARITEXT,
@@ -41,7 +44,7 @@ class SalesAdmin(ExportActionMixin, admin.ModelAdmin):
     search_fields = ['date', 'credit']
     # prepopulated_fields = {'name': ('name',)}
     # list_editable = ['status']
-    list_per_page = 10
+    list_per_page = 35
 
     # special actions
     actions = [make_branch_published, make_branch_draft]
@@ -56,20 +59,25 @@ class BranchesAdmin(admin.ModelAdmin):
     # fields = ('name', ('phone', 'email'), ('city', 'country'))
 
     fieldsets = (
+        ('Adres Bilgileri', {
+            'fields': ('country', 'city', 'district', 'postcode', 'address', 'addressDescription',),
+        }),
         ('Şube Bilgileri', {
-            'fields': (('name', 'branchPhoto',),),
-            'description': '%s' % UYARITEXT,
+            'fields': ('name', 'photo',),
+            # 'description': '%s' % UYARITEXT,
 
         }),
         ('İletişim Bilgileri', {
-            'fields': ('manager', ('phone', 'email',)),
+            'fields': ('manager', 'phone', 'email',),
             # 'classes': ('collapse',),  # other options: extrapretty, wide
         }),
-        ('Adres Bilgileri', {
-            'fields': (( 'city', 'district', 'postcode'), ('address', 'description',)),
-        }),
+
         ('Çalışma Saatleri', {
             'fields': ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun',),
+        }),
+        ('Diğer', {
+            'fields': ('status', 'author',),
+            'classes': ('collapse',),
         }),
     )
     #fields = ('author', 'createdOn', 'updatedOn', 'status')
@@ -82,7 +90,7 @@ class BranchesAdmin(admin.ModelAdmin):
     # prepopulated_fields = {'name': ('name',)}
     # list_editable = ['status']
     list_per_page = 10
-
+    # readonly_fields = ('country',)
     # special actions
     actions = [make_branch_published, make_branch_draft]
 
